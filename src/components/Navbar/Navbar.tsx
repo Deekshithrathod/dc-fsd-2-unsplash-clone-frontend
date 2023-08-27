@@ -1,7 +1,7 @@
 import { Modal } from "@mui/material";
 import "./Navbar.css";
 import { useState } from "react";
-import CustomModal from "../CustomModal/CustomModal";
+import AddPhotoModal from "../AddPhotoModal/AddPhotoModal";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -18,7 +18,12 @@ const Navbar = () => {
           <label htmlFor="search">
             <span className="material-symbols-outlined">search</span>
           </label>
-          <input type="text" placeholder="Search by name" id="search" />
+          <input
+            autoComplete="off"
+            type="text"
+            placeholder="Search by name"
+            id="search"
+          />
         </div>
       </div>
       <button className="btn" onClick={handleOpen}>
@@ -30,7 +35,7 @@ const Navbar = () => {
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description">
-        <CustomModal handleClose={handleClose} />
+        <AddPhotoModal handleClose={handleClose} />
       </Modal>
     </nav>
   );
